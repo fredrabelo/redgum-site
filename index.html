@@ -136,6 +136,381 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
         </div>
     </section>
 
+    <!-- Quem Provou -->
+    <section id="quemprovou" class="bg-white w-full py-16">
+        <div class="container mx-auto px-8 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-8" style="color: #E71A2E;">QUEM PROVOU JÁ FAZ PARTE DA COMUNIDADE REDGUM</h2>
+            
+            <div class="relative overflow-hidden">
+                <div id="carousel" class="flex transition-transform duration-300 ease-in-out">
+                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="max-w-xs mx-auto p-8 h-96 relative overflow-hidden" style="background-color: #DFFE02; border-top-right-radius: 3rem;">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full mr-3"></div>
+                                <p class="font-bold">@instagramdapessoa1</p>
+                            </div>
+                            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="max-w-xs mx-auto p-8 h-96 relative overflow-hidden" style="background-color: #DFFE02; border-top-right-radius: 3rem;">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full mr-3"></div>
+                                <p class="font-bold">@instagramdapessoa2</p>
+                            </div>
+                            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="max-w-xs mx-auto p-8 h-96 relative overflow-hidden" style="background-color: #DFFE02; border-top-right-radius: 3rem;">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full mr-3"></div>
+                                <p class="font-bold">@instagramdapessoa3</p>
+                            </div>
+                            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="max-w-xs mx-auto p-8 h-96 relative overflow-hidden" style="background-color: #DFFE02; border-top-right-radius: 3rem;">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full mr-3"></div>
+                                <p class="font-bold">@instagramdapessoa4</p>
+                            </div>
+                            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="max-w-xs mx-auto p-8 h-96 relative overflow-hidden" style="background-color: #DFFE02; border-top-right-radius: 3rem;">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full mr-3"></div>
+                                <p class="font-bold">@instagramdapessoa5</p>
+                            </div>
+                            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="max-w-xs mx-auto p-8 h-96 relative overflow-hidden" style="background-color: #DFFE02; border-top-right-radius: 3rem;">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full mr-3"></div>
+                                <p class="font-bold">@instagramdapessoa6</p>
+                            </div>
+                            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8 space-x-4">
+                <button id="prevBtn" class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold" style="background-color: #E71A2E;">‹</button>
+                <button id="nextBtn" class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold" style="background-color: #E71A2E;">›</button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 4; // 6 cards - 3 visible = 4 positions
+        let autoSlideInterval;
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+            } else {
+                currentSlide = 0;
+            }
+            updateCarousel();
+        }
+        
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 4000); // 4 seconds
+        }
+        
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+        
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
+        });
+        
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            stopAutoSlide();
+            if (currentSlide > 0) {
+                currentSlide--;
+            } else {
+                currentSlide = totalSlides - 1;
+            }
+            updateCarousel();
+            startAutoSlide();
+        });
+        
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            const translateX = -currentSlide * (100 / 3); // Move by 1/3 of container width
+            carousel.style.transform = `translateX(${translateX}%)`;
+        }
+        
+        // Start auto-slide when page loads
+        startAutoSlide();
+    </script>
+
+    <!-- redefinasuaenergia -->
+    <section id="redefinasuaenergia" class="w-full min-h-[500px] flex">
+        <div class="w-2/5 bg-cover bg-center" style="background-image: url('images/FOTO-EMBALAGEM-MÃO.jpg');"></div>
+        <div class="w-3/5 flex flex-col justify-center px-8" style="background-color: #E7192E;"><br><br>
+            <h2 class="text-2xl md:text-4xl font-bold mb-8" style="color: #DFFE02;">REDEFINA SUA ENERGIA</h2>
+            <p class="text-white text-lg">Traga para o seu cotidiano as vantagens do Red Gum, e encare o dinamismo e os desafios dos dias atuais com mais disposição, foco, saúde e praticidade.
+            </p><br>
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <img src="images/raio.png" alt="Raio" class="mr-3" style="width: 24px;">
+                    <p class="text-white"><strong>Zero açúcar</strong><br>
+                        Consumo diário sem peso na consciência.</p>
+                </div>
+                <div class="flex items-center">
+                    <img src="images/raio.png" alt="Raio" class="mr-3" style="width: 24px;">
+                    <p class="text-white "><strong>Não contém glúten</strong><br>
+                        Você com energia mantendo sua dieta.</p>
+                </div>
+                <div class="flex items-center">
+                    <img src="images/raio.png" alt="Raio" class="mr-3" style="width: 24px;">
+                    <p class="text-white"><strong>Menos vontade por doces</strong><br>
+                        Satisfação oral e distração cerebral na mastigação que ajuda a inibir o hábito de "beliscar" guloseimas.</p>
+                </div>
+                <div class="flex items-center">
+                    <img src="images/raio.png" alt="Raio" class="mr-3" style="width: 24px;">
+                    <p class="text-white "><strong>Mais sabor</strong><br>
+                        Sabor intenso duradouro de hortelã na boca.</p>
+                </div>
+                <div class="flex items-center">
+                    <img src="images/raio.png" alt="Raio" class="mr-3" style="width: 24px;">
+                    <p class="text-white "><strong>Acão rápida</strong><br>
+                        Absorção dos principios ativos pela mucosa bucal, permitindo ação mais rápida (cerca de 5 minutos) do que a gastrointestinal utilizada por consumo de energéticos líquidos (cerca de 20 minutos).</p>
+                </div>
+                <div class="flex items-center">
+                    <img src="images/raio.png" alt="Raio" class="mr-3" style="width: 24px;">
+                    <p class="text-white "><strong>Mais energia e foco</strong><br>
+                        Cafeína e taurina nna medida certa e sem exageros, para uso conforme sua necessidade. O complemento perfeito para a dinâmica dos seus dias.</p>
+                </div>
+                <div class="flex items-center">
+                    <img src="images/raio.png" alt="Raio" class="mr-3" style="width: 24px;">
+                    <p class="text-white "><strong>Mais praticidade</strong><br>
+                        Embalagem premium de bolso fácil de levar com você para qualquer lugar.</p>
+                </div>
+                <div class="flex items-center">
+                    <img src="images/raio.png" alt="Raio" class="mr-3" style="width: 24px;">
+                    <p class="text-white "><strong>Validado pela ciência</strong><br>
+                        Modelo de suplemento alimentar em goma de mascar, com cafeína, taurina e vitaminas do complexo B, validada com sucesso nos EUA e Europa.</p>
+                </div>
+            </div><br><br>
+        </div>
+    </section>
+
+    <!-- confienaciencia -->
+    <section id="confienaciencia" class="w-full py-16 bg-cover bg-center" style="background-image: url('images/BACKGROUND.png');">
+        <div class="container mx-auto px-8 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-8" style="color: #E71A2E;">CONFIE NA CIÊNCIA E CRIE UM HÁBITO SAUDÁVEL E INTELIGENTE</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="flex gap-8 items-center mb-8">
+                    <div>
+                        <img src="images/PAPER.png" alt="Paper" class="h-auto">
+                    </div>
+                    <div class="flex-1 text-left text-black">
+                        <p class="text-base md:text-lg">
+                            Organizações reguladoras e profissionais, como a <strong>American Dental Association (ADA)</strong> e a <strong>FDI World Dental Federation</strong>, apoiam os benefícios do uso de chicletes sem açúcar, os quais são eficazes no aumento do fluxo salivar e diminuição da cárie dentária.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-8 items-center mb-8">
+                    <div>
+                        <img src="images/PAPER.png" alt="Paper" class="h-auto">
+                    </div>
+                    <div class="flex-1 text-left text-black">
+                        <p class="text-base md:text-lg">
+                            "A goma de mascar com cafeina aumenta rapidamente a concentração e melhora o desempenho cognitivo." Human Psychopharmacology: Clinical and Experimental.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-8 items-center mb-8">
+                    <div>
+                        <img src="images/PAPER.png" alt="Paper" class="h-auto">
+                    </div>
+                    <div class="flex-1 text-left text-black">
+                        <p class="text-base md:text-lg">
+                            Chicletes com cafeina são formulados para fornecer um impulso de energia mais suave, sem os picos e colapsos ("crashes") associados a outras formas de ingestão de cafeína.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-8 border-2" style="border-color: #E71A2E;">
+                    <div class="flex gap-8 items-center">
+                        <div>
+                            <img src="images/PAPER COM LUPA.png" alt="Paper" class="h-auto">
+                        </div>
+                        <div class="flex-1 text-left text-black">
+                            <p class="text-base md:text-lg">
+                                A literatura cientifica define que a goma de mascar sem açúcar ajuda a reduzir a cárie dentária, e a com cafeina é eficaz para aumentar o estado de alerta, melhorar o foco e a  concentração e reduzir a fadiga, combinando os benefícios fisiológicos da mastigação com os efeitos estimulantes da cafeina. <strong>O Red Gum une os 2 atributos para você!</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- compre -->
+    <section id="compre" class="w-full py-16 bg-cover bg-center" style="background-image: url('images/BACKGROUND-ROXO.jpg');">
+        <div class="container mx-auto px-8 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-6" style="color: #DFFE02;">COMPRE AGORA E ECONOMIZE</h2>
+            <p class="text-base md:text-lg text-white mb-8 max-w-4xl mx-auto">
+                Red Gum vem com 24 chicletes em cada latinha (o dobro de gomas de mascar similares que vendem por ai), além de ter uma embalagem premium de bolso, leve e prática, que te acompanha em qualquer lugar. Prove, surpreenda-se e venha fazer parte da comunidade Red Gum. Dê play no dia com mais energia!
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <img src="images/BOX-01.png" alt="Box 01" class="w-full h-auto">
+                <img src="images/BOX-02.png" alt="Box 02" class="w-full h-auto">
+                <img src="images/BOX-03.png" alt="Box 03" class="w-full h-auto">
+            </div>
+            <br>
+            <p class="text-base text-white mb-8 max-w-4xl mx-auto">
+                Compra 100% segura garantida. Caso não goste, devolvemos seu dinheiro. 
+            </p>
+        </div>
+    </section>
+
+
+    <!-- sejainfluenciador -->
+    <section id="sejainfluenciador" class="w-full bg-cover bg-center flex items-center" style="min-height:480px;background-image: url('images/BACKGROUND INFLUENCIADOR.jpg');">
+        <div class="w-1/2 px-8 text-left">
+            <h2 class="text-2xl md:text-4xl font-bold mb-6" style="color: #E71A2E;">SEJA UM INFLUENCIADOR</h2>
+            <p class="text-base md:text-lg text-black mb-8">
+                Se você quer fazer parte da comunidade ativa e saudável Red Gum e ser um influenciador oficial, com beneficios exclusivos e cupons de desconto para seus seguidores, mande uma mensagem para a gente e aguarde nosso contato.
+            </p>
+            <img src="images/BOTÃO MENSAGEM.png" alt="Botão Mensagem">
+        </div>
+    </section>
+
+    <!-- faq -->
+    <section id="faq" class="w-full py-16 bg-cover bg-center" style="background-image: url('images/BACKGROUND PERGUNTAS.png');">
+        <div class="container mx-auto px-8 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-8" style="color: #E71A2E;">PERGUNTAS FREQUENTES</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(0)">
+                        O que é Red Gum?
+                        <span id="icon-0" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-0" class="hidden p-4 pt-0 text-black text-left">
+                        Red Gum é uma goma de mascar sem açúcar, com cafeina e taurina, desenvolvida para dar um impulso de energia. Fácil de levar para todo lugar e deliciosa de mastigar.
+                    </div>
+                </div>
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(1)">
+                        Como funciona? 
+                        <span id="icon-1" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-1" class="hidden p-4 pt-0 text-black text-left">
+                        XXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(2)">
+                        É seguro usar todo dia? 
+                        <span id="icon-2" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-2" class="hidden p-4 pt-0 text-black text-left">
+                        XXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(3)">
+                        Quando devo mastigar o Red Gum? 
+                        <span id="icon-3" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-3" class="hidden p-4 pt-0 text-black text-left">
+                        XXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(4)">
+                        Quantos chicletes devo mastigar? 
+                        <span id="icon-4" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-4" class="hidden p-4 pt-0 text-black text-left">
+                        XXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(5)">
+                        Vou sentir algum efeito colateral ou aceleração desconfortável? 
+                        <span id="icon-5" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-5" class="hidden p-4 pt-0 text-black text-left">
+                        XXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(6)">
+                        Quais os ingredientes principais e suas quantidades?
+                        <span id="icon-6" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-6" class="hidden p-4 pt-0 text-black text-left">
+                        XXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(7)">
+                        Mastigar Red Gum todo dia pode afetar minha dieta? 
+                        <span id="icon-7" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-7" class="hidden p-4 pt-0 text-black text-left">
+                        XXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(8)">
+                        Mastigar Red Gum todo dia pode afetar minha saúde bucal?
+                        <span id="icon-8" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-8" class="hidden p-4 pt-0 text-black text-left">
+                        XXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+                <div class="bg-white border-2 rounded-full" style="border-color: #E71A2E;">
+                    <button class="w-full p-4 text-left font-medium text-black flex justify-between items-center" onclick="toggleFaq(9)">
+                        O Red Gum realmente funciona? 
+                        <span id="icon-9" class="text-xl">▼</span>
+                    </button>
+                    <div id="faq-9" class="hidden p-4 pt-0 text-black text-left">
+                        XXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleFaq(index) {
+            const faq = document.getElementById(`faq-${index}`);
+            const icon = document.getElementById(`icon-${index}`);
+            const container = faq.parentElement;
+            
+            if (faq.classList.contains('hidden')) {
+                faq.classList.remove('hidden');
+                icon.textContent = '▲';
+                container.classList.remove('rounded-full');
+                container.classList.add('rounded-xl');
+            } else {
+                faq.classList.add('hidden');
+                icon.textContent = '▼';
+                container.classList.remove('rounded-xl');
+                container.classList.add('rounded-full');
+            }
+        }
+    </script>
 
     <!-- Contato -->
     <section id="contato" class="bg-white w-full py-16">
@@ -206,23 +581,24 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
     <footer class="border-t border-gray-300">
         <div class="bg-white py-6">
             <div class="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between">
-                <img src="images/treid.png" alt="Treid" class="h-8 mb-4 md:mb-0">
+                <img src="images/MARCA RED GUM.png" alt="Red Gum" class="h-8 mb-4 md:mb-0">
+                <img src="images/BOTÃO EXPERIMENTE AGORA.png" alt="Experimente Agora" class="mb-4 md:mb-0">
                 <div class="text-center md:text-left mb-4 md:mb-0">
-                    <p class="text-main-dark font-medium">Treid LTDA</p>
+                    <p class="text-main-dark font-medium">Uma Marca: Treid LTDA</p>
                     <p class="text-main-dark text-sm">CNPJ. 63.270.700/0001-16</p>
                 </div>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-main-dark hover:text-main">
+                    <a href="#" style="color: #E71A2E;">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
                     </a>
-                    <a href="#" class="text-main-dark hover:text-main">
+                    <a href="#" style="color: #E71A2E;">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                         </svg>
                     </a>
-                    <a href="#" class="text-main-dark hover:text-main">
+                    <a href="#" style="color: #E71A2E;">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
@@ -230,7 +606,7 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
                 </div>
             </div>
         </div>
-        <div class="bg-main-dark h-4"></div>
+        <div class="h-4" style="background-color: #E71A2E;"></div>
     </footer>
 
     <script>
