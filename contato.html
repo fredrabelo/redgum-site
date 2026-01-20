@@ -18,8 +18,6 @@
             background-position: center;
             transition: opacity 0.5s ease-in-out;
         }
-        .banner-1 { background-image: url('images/BANNERS-IMAGEM-01.jpg'); }
-        .banner-2 { background-image: url('images/BANNERS-IMAGEM-02.jpg'); }
         .section-bg { background-image: url('images/BG-COM-T.png'); }
         .menu-link {
             color: var(--main-dark);
@@ -55,41 +53,27 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-cover bg-center" style="background-image: url('images/BACKGROUND COM RAIO.png');">
+    <!-- Header -->
+    <header class="py-4">
+        <div class="container mx-auto px-8 text-center mb-4">
+            <a href="javascript:void(0)" onclick="goToHome()"><img src="images/MARCA RED GUM.png" alt="Red Gum" class="h-16 mx-auto"></a>
+        </div>
+        <div class="container mx-auto px-8">
+            <div class="h-1" style="background-color: #E71A2E;"></div>
+        </div>
+    </header>
     
 
     <!-- Contato -->
-    <section id="contato" class="bg-white w-full py-16">
-        <div class="container mx-auto px-8 grid md:grid-cols-2 gap-16">
-            <!-- Coluna Esquerda -->
-            <div class="text-main-dark">
-                <h2 class="text-2xl md:text-4xl font-bold mb-6">Será um prazer receber o seu contato.</h2>
-                
-                <!-- Mapa Google -->
-                <div class="mb-6">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.870911397601!2d-46.689172199999994!3d-23.5730793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57733874acdb%3A0x2e5d422a3a77985c!2sAv.%20Brig.%20Faria%20Lima%2C%201811%20-%20CJ%201119%20-%20Jardim%20Paulistano%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001452-001!5e0!3m2!1spt-BR!2sbr!4v1768709497867!5m2!1spt-BR!2sbr" 
-                        width="100%" 
-                        height="250" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
-                </div>
-                
-                <div class="text-base md:text-lg">
-                    <p class="font-bold mb-2">Treid Ltda.</p>
-                    <p>Av. Brigadeiro Faria Lima, 1811 - sl. 1119</p>
-                    <p>Jardim Paulistano - São Paulo/SP</p>
-                    <p>CEP: 01452-001</p>
-                </div>
+    <section id="contato" class="w-full py-16">
+        <div class="container mx-auto px-8">
+            <div class="max-w-2xl mx-auto text-center mb-8">
+                <p class="text-xl md:text-2xl text-main-dark">Olá, se você chegou aqui é porque tem interesse em ser um influenciador oficial Red Gum. Preencha os dados abaixo para que possamos conhecer você melhor. Obrigado!</p>
             </div>
             
-            <!-- Coluna Direita -->
-            <div class="text-main-dark">
-                <h3 class="text-xl md:text-2xl font-bold mb-6">Preencha e envie!</h3>
-                
-                <form id="contactForm" class="border-2 border-gray-300 p-6 rounded-lg space-y-6 relative">
+            <div class="max-w-2xl mx-auto">
+                <form id="contactForm" class="bg-white border-2 border-gray-300 p-6 rounded-lg space-y-6 relative">
                     <div>
                         <label class="block text-xs font-medium mb-2">NOME</label>
                         <input name="nome" type="text" class="w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 text-sm focus:outline-none focus:border-main">
@@ -156,62 +140,14 @@
     </footer>
 
     <script>
-        let currentSlide = 0;
-        const slides = ['banner-1', 'banner-2'];
-        
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                const element = document.getElementById(slide);
-                element.style.opacity = i === index ? '1' : '0';
-            });
-        }
-        
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-        
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-        
-        document.getElementById('next-btn').addEventListener('click', nextSlide);
-        document.getElementById('prev-btn').addEventListener('click', prevSlide);
-        
-        // Mobile banner click to show arrows
-        const bannerSection = document.querySelector('.banner-slide');
-        const arrows = document.querySelectorAll('.banner-arrows');
-        let arrowsVisible = false;
-        
-        function toggleArrows() {
-            if (window.innerWidth <= 768) {
-                arrowsVisible = !arrowsVisible;
-                arrows.forEach(arrow => {
-                    if (arrowsVisible) {
-                        arrow.classList.add('show');
-                    } else {
-                        arrow.classList.remove('show');
-                    }
-                });
-                
-                if (arrowsVisible) {
-                    setTimeout(() => {
-                        arrowsVisible = false;
-                        arrows.forEach(arrow => arrow.classList.remove('show'));
-                    }, 3000);
-                }
+        function goToHome() {
+            const currentDomain = window.location.hostname;
+            if (currentDomain.includes('treid.com.br')) {
+                window.location.href = 'https://www.treid.com.br';
+            } else {
+                window.location.href = 'https://www.redgum.com.br';
             }
         }
-        
-        document.getElementById('banner-1').addEventListener('click', toggleArrows);
-        document.getElementById('banner-2').addEventListener('click', toggleArrows);
-        
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
         
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
@@ -239,9 +175,6 @@
                 alert('Erro ao enviar o formulário. Tente novamente mais tarde.');
             }
         });
-        
-        // Auto-rotate banner
-        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>

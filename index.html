@@ -13,13 +13,6 @@
             --secondary-dark: #FBE423;
             --secondary: #F5B705;
         }
-        .banner-slide {
-            background-size: cover;
-            background-position: center;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .banner-1 { background-image: url('images/BANNERS-IMAGEM-01.jpg'); }
-        .banner-2 { background-image: url('images/BANNERS-IMAGEM-02.jpg'); }
         .section-bg { background-image: url('images/BG-COM-T.png'); }
         .menu-link {
             color: var(--main-dark);
@@ -370,9 +363,15 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
             </p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="https://www.amazon.com.br" target="_blank">
                 <img src="images/BOX-01.png" alt="Box 01" class="w-full h-auto">
+            </a>
+            <a href="https://www.amazon.com.br" target="_blank">
                 <img src="images/BOX-02.png" alt="Box 02" class="w-full h-auto">
+            </a>
+            <a href="https://www.amazon.com.br" target="_blank">
                 <img src="images/BOX-03.png" alt="Box 03" class="w-full h-auto">
+            </a>
             </div>
             <br>
             <p class="text-base text-white mb-8 max-w-4xl mx-auto">
@@ -520,70 +519,6 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
         }
     </script>
 
-    <!-- Contato -->
-    <section id="contato" class="bg-white w-full py-16">
-        <div class="container mx-auto px-8 grid md:grid-cols-2 gap-16">
-            <!-- Coluna Esquerda -->
-            <div class="text-main-dark">
-                <h2 class="text-2xl md:text-4xl font-bold mb-6">Será um prazer receber o seu contato.</h2>
-                
-                <!-- Mapa Google -->
-                <div class="mb-6">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.870911397601!2d-46.689172199999994!3d-23.5730793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57733874acdb%3A0x2e5d422a3a77985c!2sAv.%20Brig.%20Faria%20Lima%2C%201811%20-%20CJ%201119%20-%20Jardim%20Paulistano%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001452-001!5e0!3m2!1spt-BR!2sbr!4v1768709497867!5m2!1spt-BR!2sbr" 
-                        width="100%" 
-                        height="250" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
-                </div>
-                
-                <div class="text-base md:text-lg">
-                    <p class="font-bold mb-2">Treid Ltda.</p>
-                    <p>Av. Brigadeiro Faria Lima, 1811 - sl. 1119</p>
-                    <p>Jardim Paulistano - São Paulo/SP</p>
-                    <p>CEP: 01452-001</p>
-                </div>
-            </div>
-            
-            <!-- Coluna Direita -->
-            <div class="text-main-dark">
-                <h3 class="text-xl md:text-2xl font-bold mb-6">Preencha e envie!</h3>
-                
-                <form id="contactForm" class="border-2 border-gray-300 p-6 rounded-lg space-y-6 relative">
-                    <div>
-                        <label class="block text-xs font-medium mb-2">NOME</label>
-                        <input name="nome" type="text" class="w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 text-sm focus:outline-none focus:border-main">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-xs font-medium mb-2">E-MAIL</label>
-                        <input name="email" type="email" class="w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 text-sm focus:outline-none focus:border-main">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-xs font-medium mb-2">CELULAR</label>
-                        <input name="celular" type="tel" class="w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 text-sm focus:outline-none focus:border-main">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-xs font-medium mb-2">EMPRESA</label>
-                        <input name="empresa" type="text" class="w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 text-sm focus:outline-none focus:border-main">
-                    </div>
-                    
-                    <div class="pb-6">
-                        <label class="block text-xs font-medium mb-2">MENSAGEM</label>
-                        <textarea name="mensagem" rows="3" class="w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 text-sm focus:outline-none focus:border-main resize-none"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="absolute bottom-0 right-6 transform translate-y-1/2 bg-main text-white py-3 px-6 rounded font-medium text-sm hover:bg-main-dark transition-colors">
-                        ENVIAR
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="border-t border-gray-300">
