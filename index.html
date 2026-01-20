@@ -57,7 +57,7 @@
 </head>
 <body class="bg-gray-100">
     
-    <section id="redgum" class="redgum-bg w-full min-h-[500px] bg-cover bg-center flex items-center justify-center py-16 -mt-16 md:-mt-16 mt-4">
+    <section id="redgum" class="redgum-bg w-full min-h-[500px] bg-cover bg-center flex items-center justify-center py-16 -mt-16">
         <div class="container mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
             <div class="text-black">
                 <h2 class="text-2xl md:text-4xl font-bold mb-4 mt-8">REDGUM NÃO É SÓ UM CHICLETE, É UM IMPULSO DE ENERGIA COM MUITO SABOR</h2>
@@ -76,7 +76,7 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
                 </div>
                 
                 <div>
-                    <img src="images/BOTÃO EXPERIMENTO AGORA.png" alt="Experimente Agora" class="max-w-full h-auto">
+                    <a href="https://www.amazon.com.br" target="_blank"><img src="images/BOTÃO EXPERIMENTO AGORA.png" alt="Experimente Agora" class="max-w-full h-auto"></a>
                 </div>
             </div>
             <div class="flex justify-center">
@@ -101,7 +101,7 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
                         Leve no bolso para a hora que precisar dar aquele up na energia e na concentração, sem excesso de agito e aceleração.
                     </p>
                     <div>
-                        <img src="images/BOTÃO EXPERIMENTE AGORA INICIO.png" alt="Experimente Agora" class="max-w-full h-auto">
+                        <a href="https://www.amazon.com.br" target="_blank"><img src="images/BOTÃO EXPERIMENTE AGORA INICIO.png" alt="Experimente Agora" class="max-w-full h-auto"></a>
                     </div>
                 </div>
                 <div class="md:col-span-2">
@@ -209,7 +209,7 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
     
     <script>
         let currentSlide = 0;
-        const totalSlides = 4; // 6 cards - 3 visible = 4 positions
+        const totalSlides = window.innerWidth <= 768 ? 6 : 4;
         let autoSlideInterval;
         
         function nextSlide() {
@@ -248,7 +248,8 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
         
         function updateCarousel() {
             const carousel = document.getElementById('carousel');
-            const translateX = -currentSlide * (100 / 3); // Move by 1/3 of container width
+            const isMobile = window.innerWidth <= 768;
+            const translateX = isMobile ? -currentSlide * 100 : -currentSlide * (100 / 3);
             carousel.style.transform = `translateX(${translateX}%)`;
         }
         
@@ -258,8 +259,8 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
 
     <!-- redefinasuaenergia -->
     <section id="redefinasuaenergia" class="w-full min-h-[500px] flex">
-        <div class="w-2/5 bg-cover bg-center" style="background-image: url('images/FOTO-EMBALAGEM-MÃO.jpg');"></div>
-        <div class="w-3/5 flex flex-col justify-center px-8" style="background-color: #E7192E;"><br><br>
+        <div class="hidden md:block w-2/5 bg-cover bg-center" style="background-image: url('images/FOTO-EMBALAGEM-MÃO.jpg');"></div>
+        <div class="w-full md:w-3/5 flex flex-col justify-center px-8" style="background-color: #E7192E;"><br><br>
             <h2 class="text-2xl md:text-4xl font-bold mb-8" style="color: #DFFE02;">REDEFINA SUA ENERGIA</h2>
             <p class="text-white text-lg">Traga para o seu cotidiano as vantagens do Red Gum, e encare o dinamismo e os desafios dos dias atuais com mais disposição, foco, saúde e praticidade.
             </p><br>
@@ -382,13 +383,20 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
 
 
     <!-- sejainfluenciador -->
-    <section id="sejainfluenciador" class="w-full bg-cover bg-center flex items-center" style="min-height:480px;background-image: url('images/BACKGROUND INFLUENCIADOR.jpg');">
-        <div class="w-1/2 px-8 text-left">
+    <section id="sejainfluenciador" class="w-full flex items-center md:bg-cover md:bg-center" style="min-height:480px; background-color: #DFFE02; background-image: none;">
+        <style>
+            @media (min-width: 768px) {
+                #sejainfluenciador {
+                    background-image: url('images/BACKGROUND INFLUENCIADOR.jpg') !important;
+                }
+            }
+        </style>
+        <div class="w-full md:w-1/2 px-8 text-left">
             <h2 class="text-2xl md:text-4xl font-bold mb-6" style="color: #E71A2E;">SEJA UM INFLUENCIADOR</h2>
             <p class="text-base md:text-lg text-black mb-8">
                 Se você quer fazer parte da comunidade ativa e saudável Red Gum e ser um influenciador oficial, com beneficios exclusivos e cupons de desconto para seus seguidores, mande uma mensagem para a gente e aguarde nosso contato.
             </p>
-            <img src="images/BOTÃO MENSAGEM.png" alt="Botão Mensagem">
+            <a href="contato.html"><img src="images/BOTÃO MENSAGEM.png" alt="Botão Mensagem"></a>
         </div>
     </section>
 
@@ -582,7 +590,7 @@ Mais foco e energia na medida certa. Fácil de levar para todo lugar e delicioso
         <div class="bg-white py-6">
             <div class="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between">
                 <img src="images/MARCA RED GUM.png" alt="Red Gum" class="h-8 mb-4 md:mb-0">
-                <img src="images/BOTÃO EXPERIMENTE AGORA.png" alt="Experimente Agora" class="mb-4 md:mb-0">
+                <a href="https://www.amazon.com.br" target="_blank"><img src="images/BOTÃO EXPERIMENTE AGORA.png" alt="Experimente Agora" class="mb-4 md:mb-0"></a>
                 <div class="text-center md:text-left mb-4 md:mb-0">
                     <p class="text-main-dark font-medium">Uma Marca: Treid LTDA</p>
                     <p class="text-main-dark text-sm">CNPJ. 63.270.700/0001-16</p>
